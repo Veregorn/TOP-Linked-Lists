@@ -1,5 +1,5 @@
 // Let's create a factory for a node to use it in the linked list
-const Node = () => {
+export const Node = () => {
     // Properties
     let _value = null;
     let _nextNode = null;
@@ -18,10 +18,16 @@ const Node = () => {
     // Sel nextNode to input node
     const setNextNode = (node) => _nextNode =  node;
 
+    // Returns a String with the node to print it
+    const toString = () => {
+        return `( ${getValue()} ) -> ${getNextNode()}`;
+    }
+
     return {
         getValue,
         getNextNode,
         setValue,
-        setNextNode
+        setNextNode,
+        toString
     }
 };
